@@ -6,7 +6,7 @@ const PortfolioSection: React.FC = () => {
     {
       id: 1,
       title: "Glowsync",
-      description: "Transforming ideas into visually stunning interfaces. Elevating user experiences through intuitive designs that captivate.",
+      description: "GlowSync is an e-commerce platform that provides personalized skincare recommendations based on facial health analysis",
       backgroundColor: "bg-purple-200",
       iconColor: "text-purple-600",
       githubUrl: "https://github.com/TioSatrio100/GlowSyncSkin",
@@ -20,7 +20,7 @@ const PortfolioSection: React.FC = () => {
     {
       id: 2,
       title: "Digital Photobooth",
-      description: "Crafting smooth, responsive web experiences and adherence to best practices for search visibility.",
+      description: "Capture your moments with style and create lasting memories",
       backgroundColor: "bg-green-200",
       iconColor: "text-green-600",
       githubUrl: "https://github.com/TioSatrio100/digitalphotobox",
@@ -34,7 +34,7 @@ const PortfolioSection: React.FC = () => {
     {
       id: 3,
       title: "Efishery",
-      description: "Demystifying tech through engaging storytelling. Creating content that educates and inspires.",
+      description: "Classifying fresh and non-fresh fish images using TensorFlow so that fish distribution from producers and consumers can be well maintained and helps increase fish sales productivity",
       backgroundColor: "bg-orange-200",
       iconColor: "text-orange-600",
       githubUrl: "https://github.com/TioSatrio100/classification-of-fresh-and-non-fresh-fish-images",
