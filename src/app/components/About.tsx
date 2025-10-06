@@ -67,7 +67,7 @@ const AboutSection = () => {
               <h3 className="text-3xl font-black uppercase mb-4">Who I Am</h3>
               <div className="space-y-4 text-lg leading-relaxed">
                 <p className="font-medium">
-                  I'm a passionate <span className="bg-white px-2 py-1 font-bold">Full Stack Developer</span> who loves creating 
+                  Im a passionate <span className="bg-white px-2 py-1 font-bold">Full Stack Developer</span> who loves creating 
                   beautiful and functional web experiences.
                 </p>
                 <p>
@@ -84,7 +84,7 @@ const AboutSection = () => {
               <p className="text-lg leading-relaxed">
                 Started as a curious learner, evolved into a problem solver. 
                 Every project is an opportunity to create something amazing and 
-                push the boundaries of what's possible.
+                push the boundaries of whats possible.
               </p>
             </div>
           </div>
