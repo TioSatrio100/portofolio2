@@ -1,5 +1,13 @@
-import React from "react";
+"use client";
+
 import Image from "next/image";
+import React from "react";
+import { Pixelify_Sans } from "next/font/google";
+
+const pixelify = Pixelify_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 interface TechStackItem {
   id: number;
@@ -12,7 +20,7 @@ const RotatingTechStack: React.FC = () => {
     { id: 1, name: "React", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { id: 2, name: "TypeScript", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
     { id: 3, name: "Next.js", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-    { id: 4, name: "GO", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
+    { id: 4, name: "Go", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
     { id: 5, name: "Node.js", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
     { id: 6, name: "Laravel", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
     { id: 7, name: "Docker", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
@@ -21,47 +29,101 @@ const RotatingTechStack: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-16 px-8 text-purple-600">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative min-h-screen bg-white py-20 px-6 overflow-hidden">
+
+      {/* Pixel Art Decorations */}
+      <div className="absolute top-32 right-24 opacity-60">
+        <div className="relative w-16 h-16">
+          <div className="absolute w-4 h-4 bg-purple-400 border-2 border-black top-0 left-4"></div>
+          <div className="absolute w-4 h-4 bg-yellow-400 border-2 border-black top-4 left-0"></div>
+          <div className="absolute w-4 h-4 bg-black top-4 left-8"></div>
+          <div className="absolute w-4 h-4 bg-yellow-400 border-2 border-black top-8 left-4"></div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-40 left-16 opacity-50">
+        <div className="w-12 h-12 bg-yellow-400 border-4 border-black transform rotate-45"></div>
+      </div>
+
+      <div className="absolute top-24 left-32 opacity-60">
+        <div className="w-10 h-10 rounded-full bg-purple-400 border-4 border-black"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-16">
-          <span className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-700 via-purple-600 to-slate-600 bg-clip-text text-transparent animate-pulse mb-4">Tech Stack</span>
-          <p className="text-xl text-white max-w-2xl mx-auto">Technologies and tools I use to bring ideas to life</p>
+          <h1 className="text-5xl lg:text-6xl font-black text-black mb-6 leading-tight uppercase">
+            <span className={`${pixelify.className} bg-yellow-400 px-6 py-3 inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Tech</span>{" "}
+            <span className={`${pixelify.className} bg-purple-400 px-6 py-3 inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Stack</span>
+          </h1>
+          <p className="text-xl font-bold text-black">
+            Technologies and tools I use to bring ideas to life{" "}
+            <span className="inline-block px-3 py-1 text-3xl">🕹️</span>
+          </p>
         </div>
 
-        {/* Grid Tech Stack Icons */}
-        <div className="grid grid-cols-3 gap-12 max-w-md mx-auto">
-          {techStackItems.map((item) => (
-            <div key={item.id} className="relative group cursor-pointer flex flex-col items-center justify-center">
-              {/* Glassy glossy box */}
-              <div className=" w-20 h-20 rounded-xl animate-glow  bg-black backdrop-blur-md border border-purple/50 shadow-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 relative overflow-hidden">
-                {/* Glossy shine overlay */}
-                <div
-                  className="absolute top-0 left-0 w-full h-1/2 rounded-t-xl pointer-events-none"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%)",
-                    filter: "blur(10px)",
-                    transform: "translateY(-30%)",
-                  }}
+        {/* Tech Icons Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+          {techStackItems.map((item, index) => (
+            <div 
+              key={item.id} 
+              className="flex flex-col items-center group"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="w-28 h-28 border-4 border-black flex items-center justify-center bg-white hover:bg-yellow-400 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-3 shadow-lg relative overflow-hidden">
+                {/* Background pattern on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10">
+                  <div className="absolute inset-0 bg-black" 
+                    style={{
+                      backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(0,0,0,0.1) 5px, rgba(0,0,0,0.1) 10px)`
+                    }}
+                  ></div>
+                </div>
+                
+                <Image
+                  src={item.imageUrl}
+                  alt={`${item.name} logo`}
+                  width={56}
+                  height={56}
+                  unoptimized
+                  className="object-contain relative z-10 group-hover:scale-110 transition-transform"
                 />
-                <Image src={item.imageUrl} alt={`${item.name} logo`} width={40} height={40} unoptimized className="object-contain filter drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300 relative z-10" />
               </div>
-
-              {/* Tooltip */}
-              <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-20 shadow-lg">
+              <div className="mt-4 bg-black text-white px-4 py-2 font-bold text-sm uppercase tracking-wide border-2 border-black group-hover:bg-purple-400 group-hover:text-black transition-colors">
                 {item.name}
-                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-black rotate-45"></div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Text */}
-        <div className="mt-16">
-          <p className="text-white text-lg leading-relaxed">Constantly learning and exploring new technologies to stay at the forefront of tech development.</p>
+        {/* Bottom Accent */}
+        <div className="mt-20 text-center">
+          <div className="inline-block bg-purple-400 border-4 border-black px-8 py-4 transform -rotate-1 shadow-xl">
+            <p className="text-2xl font-black uppercase">
+              Always Learning, Always Growing 💪
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-5">
+        <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-yellow-400 border-2 border-black opacity-70 animate-ping"></div>
+        <div className="absolute top-2/3 right-1/3 w-2 h-2 bg-purple-400 border-2 border-black opacity-60 animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-yellow-400 border-2 border-black opacity-80 animate-ping" style={{ animationDelay: "1s" }}></div>
+      </div>
+
+      {/* Pixel Art Top Left */}
+      <div className="absolute top-16 left-16 opacity-50">
+        <div className="relative w-16 h-16">
+          <div className="absolute w-4 h-4 bg-yellow-400 border-2 border-black top-0 left-4"></div>
+          <div className="absolute w-4 h-4 bg-black top-0 left-8"></div>
+          <div className="absolute w-4 h-4 bg-purple-400 border-2 border-black top-4 left-0"></div>
+          <div className="absolute w-4 h-4 bg-black top-4 left-8"></div>
+          <div className="absolute w-4 h-4 bg-yellow-400 border-2 border-black top-8 left-4"></div>
+        </div>
+      </div>
+    </section>
   );
 };
 
