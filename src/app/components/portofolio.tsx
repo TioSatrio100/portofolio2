@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
+import { motion, useInView} from "framer-motion";
 import { Pixelify_Sans } from "next/font/google";
 
 const pixelify = Pixelify_Sans({
@@ -9,6 +10,8 @@ const pixelify = Pixelify_Sans({
 
 
 const PortfolioSection: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const portfolioItems = [
     {
       id: 1,
@@ -58,8 +61,18 @@ const PortfolioSection: React.FC = () => {
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-5xl lg:text-6xl font-black uppercase mb-6">
-            <span className={`${pixelify.className} bg-purple-400 px-6 py-3 text-black inline-block border-4 border-black transform -rotate-1 shadow-lg`}>My Work</span>{" "}
-            <span className={`${pixelify.className} bg-yellow-400 px-6 py-3 text-black inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Portfolio</span>
+            <motion.span
+          ref={ref}
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+            className={`${pixelify.className} bg-purple-400 px-6 py-3 text-black inline-block border-4 border-black transform -rotate-1 shadow-lg`}>My Work</motion.span>{" "}
+            <motion.span 
+              ref={ref}
+          initial={{ opacity: 0, x: -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+            className={`${pixelify.className} bg-yellow-400 px-6 py-3 text-black inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Portfolio</motion.span>
           </h2>
           <p className="text-xl text-black font-bold">
             Explore my diverse portfolio across different domains{" "}
@@ -68,7 +81,12 @@ const PortfolioSection: React.FC = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((item, index) => (
             <div key={item.id} className="group">
               <div className="bg-gray-100 border-4 border-black overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl h-full flex flex-col">
@@ -122,7 +140,7 @@ const PortfolioSection: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom Call to Action */}
         <div className="text-center mt-16">

@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React,  { useRef }  from "react";
 import { Pixelify_Sans } from "next/font/google";
+import { motion, useInView} from "framer-motion";
 
 const pixelify = Pixelify_Sans({
   subsets: ["latin"],
@@ -27,7 +28,8 @@ const RotatingTechStack: React.FC = () => {
     { id: 8, name: "Git", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
     { id: 9, name: "Python", imageUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
   ];
-
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   return (
     <section className="relative min-h-screen bg-white py-20 px-6 overflow-hidden">
 
@@ -53,8 +55,18 @@ const RotatingTechStack: React.FC = () => {
         {/* Header */}
         <div className="mb-16">
           <h1 className="text-5xl lg:text-6xl font-black text-black mb-6 leading-tight uppercase">
-            <span className={`${pixelify.className} bg-yellow-400 px-6 py-3 inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Tech</span>{" "}
-            <span className={`${pixelify.className} bg-purple-400 px-6 py-3 inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Stack</span>
+            <motion.span
+             ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+           className={`${pixelify.className} bg-yellow-400 px-6 py-3 inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Tech</motion.span>{" "}
+            <motion.span 
+             ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className={`${pixelify.className} bg-purple-400 px-6 py-3 inline-block border-4 border-black transform -rotate-1 shadow-lg`}>Stack</motion.span>
           </h1>
           <p className="text-xl font-bold text-black">
             Technologies and tools I use to bring ideas to life{" "}
@@ -63,7 +75,12 @@ const RotatingTechStack: React.FC = () => {
         </div>
 
         {/* Tech Icons Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+        <motion.div 
+         ref={ref}
+          initial={{ opacity: 0, x: -100 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
           {techStackItems.map((item, index) => (
             <div 
               key={item.id} 
@@ -94,7 +111,7 @@ const RotatingTechStack: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom Accent */}
         <div className="mt-20 text-center">

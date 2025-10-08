@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Pixelify_Sans } from "next/font/google";
 
 const pixelify = Pixelify_Sans({
@@ -9,6 +10,8 @@ const pixelify = Pixelify_Sans({
 });
 
 const AboutSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   return (
     <section id="about" className="min-h-screen w-full relative bg-white text-black flex items-center justify-center px-6 py-20 overflow-hidden">
       {/* Yellow Striped Background - Top */}
@@ -50,11 +53,21 @@ const AboutSection = () => {
         {/* Section Title */}
         <div className="text-center mb-16">
           <div className="inline-block relative">
-            <h2 className="text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4">
-              <span className="relative inline-block">
-                <span className={`${pixelify.className} bg-purple-400 px-6 py-3 inline-block transform rotate-1 border-4 border-black`}>About Me</span>
-              </span>
-            </h2>
+<motion.h2
+  ref={ref}
+  initial={{ opacity: 0, y: 50 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  className="text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4"
+>
+  <span className="relative inline-block">
+    <span
+      className={`${pixelify.className} bg-purple-400 px-6 py-3 inline-block transform rotate-1 border-4 border-black`}
+    >
+      About Me
+    </span>
+  </span>
+</motion.h2>
             <p className="text-xl text-gray-700 mt-6 font-medium">Get to know more about who I am and what I do</p>
           </div>
         </div>
@@ -63,9 +76,12 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-6">
-            <div className="bg-yellow-400 border-4 border-black p-8 transform -rotate-1 shadow-2xl">
+            <motion.div   ref={ref}
+              initial={{ opacity: 0, x: -100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, ease: "easeOut" }} className="bg-yellow-400 border-4 border-black p-8 transform -rotate-1 shadow-2xl">
               <h3 className="text-3xl font-black uppercase mb-4">Who I Am</h3>
-              <div className="space-y-4 text-lg leading-relaxed">
+              <div  className="space-y-4 text-lg leading-relaxed">
                 <p className="font-medium">
                   Im a passionate <span className="bg-white px-2 py-1 font-bold">Full Stack Developer</span> who loves creating 
                   beautiful and functional web experiences.
@@ -75,9 +91,14 @@ const AboutSection = () => {
                   clean code and intuitive design.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-white border-4 border-black p-8 shadow-xl">
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, x: 100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="bg-white border-4 border-black p-8 shadow-xl">
               <h3 className="text-2xl font-black uppercase mb-4">
                 <span className="bg-purple-400 px-3 py-1">My Journey</span>
               </h3>
@@ -86,19 +107,24 @@ const AboutSection = () => {
                 Every project is an opportunity to create something amazing and 
                 push the boundaries of whats possible.
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Content */}
-          <div className="space-y-6">
+          <motion.div 
+          ref={ref}
+          initial={{ opacity: 0, x: 100 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="space-y-6">
             <div className="bg-purple-400 border-4 border-black p-8 transform rotate-1 shadow-2xl">
               <h3 className="text-3xl font-black uppercase mb-4">What I Do</h3>
               <ul className="space-y-3 text-lg">
                 {[
-                  "🤖 AI Engineer",
+                  "🤖 Data & Machine Learning",
                   "⚛️ Frontend Development", 
                   "🔧 Backend Development",
-                  "📱 Responsive Mobile Apps"
+                  "📱 Cross-Platform Mobile Apps"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3 bg-white border-2 border-black px-4 py-3 font-bold transform hover:translate-x-2 transition-transform">
                     {item}
@@ -111,7 +137,7 @@ const AboutSection = () => {
               <div className="text-5xl font-black text-yellow-500 mb-2">100%</div>
               <div className="text-lg font-bold uppercase">Dedication & Passion</div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

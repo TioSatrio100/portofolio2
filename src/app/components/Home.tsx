@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-
+import React, { useRef } from "react";
+import { motion, useInView, easeOut } from "framer-motion";
 import { Pixelify_Sans } from "next/font/google";
 
 const pixelify = Pixelify_Sans({
@@ -10,7 +10,27 @@ const pixelify = Pixelify_Sans({
 });
 
 
+const container = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const word = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease:  easeOut} },
+};
+
 const HomeSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const words = ["Create,", "Develop,", "Inspire"];
+
   return (
     <section className="min-h-screen w-full relative bg-white text-black flex items-center justify-center px-6 py-20 overflow-hidden">
       {/* Purple Striped Background - Bottom */}
@@ -76,38 +96,53 @@ const HomeSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-6xl lg:text-7xl font-black leading-tight uppercase tracking-tight">
-            <span className={`${pixelify.className} text-black`}>Create,</span>
-            <br />
-            <span className={`${pixelify.className} text-black`}>Develop,</span>
-            <br />
-            <span className="relative inline-block">
-              <span className={`${pixelify.className}  bg-yellow-400 px-4 py-2 inline-block transform -rotate-1`}>
-                Inspire
-              </span>
-            </span>
-          </h1>
+          <motion.h1
+            ref={ref}
+            className={`text-6xl lg:text-7xl font-black leading-tight uppercase tracking-tight ${pixelify.className}`}
+            variants={container}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            {words.map((w, i) => (
+              <motion.span
+                key={i}
+                variants={word}
+                className={`block ${
+                  w === "Inspire"
+                    ? "bg-yellow-400 px-4 py-2 inline-block transform -rotate-1"
+                    : "text-black"
+                }`}
+              >
+                {w}
+              </motion.span>
+            ))}
+          </motion.h1>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-8">
-            <button className="group relative bg-yellow-400 text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg border-2 border-black hover:shadow-2xl">
+            <a href="#project" className="group relative bg-yellow-400 text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg border-2 border-black hover:shadow-2xl">
               <span className="relative z-10">View My Work</span>
-            </button>
+            </a>
 
-            <button className="group border-3 border-black bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:bg-black hover:text-white shadow-lg">
+            <a href="#contact" className="group border-3 border-black bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 hover:bg-black hover:text-white shadow-lg">
               <span className="relative z-10">Get In Touch</span>
-            </button>
+            </a>
           </div>
         </div>
 
         {/* Right Content - Foto */}
-        <div className="flex justify-center lg:justify-end relative">
+        <motion.div 
+          ref={ref}
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex justify-center lg:justify-end relative">
           <img
             src="/portopict.png"
             alt="Rioo"
             className="w-80 h-auto rounded-2xl object-cover"
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Floating Particles */}
@@ -128,3 +163,4 @@ const HomeSection = () => {
 };
 
 export default HomeSection;
+
