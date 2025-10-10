@@ -84,7 +84,7 @@ const AboutSection = () => {
               <div  className="space-y-4 text-lg leading-relaxed">
                 <p className="font-medium">
                   Im a passionate <span className="bg-white px-2 py-1 font-bold">Full Stack Developer</span> who loves creating 
-                  beautiful and functional web experiences.
+                  AI-powered and scalable web applications, combining frontend design, backend logic, and Machine Learning practices into seamless solutions.
                 </p>
                 <p>
                   With expertise in modern technologies, I bring ideas to life through 
@@ -103,9 +103,7 @@ const AboutSection = () => {
                 <span className="bg-purple-400 px-3 py-1">My Journey</span>
               </h3>
               <p className="text-lg leading-relaxed">
-                Started as a curious learner, evolved into a problem solver. 
-                Every project is an opportunity to create something amazing and 
-                push the boundaries of whats possible.
+                Started as a curious learner, how software could change everyday life. That curiosity led me to ITMO, where I not only sharpened my coding skills but also joined hackathons and took leadership roles in the Indonesian student community.
               </p>
             </motion.div>
           </div>
@@ -134,8 +132,8 @@ const AboutSection = () => {
             </div>
 
             <div className="bg-white border-4 border-black p-6 text-center">
-              <div className="text-5xl font-black text-yellow-500 mb-2">100%</div>
-              <div className="text-lg font-bold uppercase">Dedication & Passion</div>
+              <div className="text-5xl font-black text-yellow-500 mb-2">My mission</div>
+              <div className="text-md font-bold uppercase">to create accessible AI-driven tools that empower students, small businesses, and communities.</div>
             </div>
           </motion.div>
         </div>
