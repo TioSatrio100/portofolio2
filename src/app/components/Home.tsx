@@ -25,6 +25,7 @@ const word = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease:  easeOut} },
 };
 
+
 const HomeSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
@@ -130,18 +131,20 @@ const HomeSection = () => {
           </div>
         </div>
 
-        {/* Right Content - Foto */}
+        {/* Right Content - photo*/}
         <motion.div 
           ref={ref}
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex justify-center lg:justify-end relative">
+        className="flex justify-center lg:justify-end relative mb-18">
+          <div className="text-center">
           <img
-            src="/portopict.png"
+            src="/newpictporto.png"
             alt="Rioo"
             className="w-80 h-auto rounded-2xl object-cover"
           />
+          </div>
         </motion.div>
       </div>
 
