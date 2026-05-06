@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView} from "framer-motion";
 import { Pixelify_Sans } from "next/font/google";
+import { Icon } from "lucide-react";
 
 const pixelify = Pixelify_Sans({
   subsets: ["latin"],
@@ -93,6 +94,15 @@ const TensorFlowIcon = () => (
       githubUrl: "https://github.com/TioSatrio100/classification-of-fresh-and-non-fresh-fish-images",
       projectUrl: "https://github.com/TioSatrio100/classification-of-fresh-and-non-fresh-fish-images",
       imageUrl: "/efishery.png",
+    }, {
+      id: 4,
+      title: "Lansia Paham",
+      description: "About an AI platform to assist seniors in filling out forms and scanning for security and fraud. It aims to create a safe community for seniors, who are a vulnerable segment of society and technologically disadvantaged",
+      tech:<NextJSIcon />,
+      tech1:<TailwindIcon/>,
+      githubUrl: "https://github.com/TioSatrio100/Lansia-Paham-v2",
+      projectUrl: "https://github.com/TioSatrio100/Lansia-Paham-v2",
+      imageUrl: "/Lansia-Paham.png",
     },
   ];
 
