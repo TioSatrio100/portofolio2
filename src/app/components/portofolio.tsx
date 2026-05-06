@@ -96,13 +96,13 @@ const TensorFlowIcon = () => (
       imageUrl: "/efishery.png",
     }, {
       id: 4,
-      title: "Lansia Paham",
-      description: "About an AI platform to assist seniors in filling out forms and scanning for security and fraud. It aims to create a safe community for seniors, who are a vulnerable segment of society and technologically disadvantaged",
+      title: "Lansia Paham (3rd Place Winner of Hackathon Bit Bash 2026)",
+      description: "AI platform to assist seniors in filling out forms and scanning for security and fraud. It aims to create a safe community for seniors, who are a vulnerable segment of society and technologically disadvantaged",
       tech:<NextJSIcon />,
       tech1:<TailwindIcon/>,
       githubUrl: "https://github.com/TioSatrio100/Lansia-Paham-v2",
       projectUrl: "https://github.com/TioSatrio100/Lansia-Paham-v2",
-      imageUrl: "/Lansia-Paham.png",
+      imageUrl: "/images/Lansia-Paham.png",
     },
   ];
 
