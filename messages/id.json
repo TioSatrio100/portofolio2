@@ -1,0 +1,43 @@
+{
+  "Navigation": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "techstack": "Keahlian",
+    "projects": "Portofolio",
+    "contact": "Kontak"
+  },
+
+  "Home": {
+    "badge": "Meet Rioo",
+    "words": {
+      "create": "Create,",
+      "develop": "Develop,",
+      "inspire": "Inspire"
+    },
+    "buttons": {
+      "viewWork": "Lihat Karya Saya",
+      "getInTouch": "Hubungi Saya"
+    }
+  },
+
+  "About": {
+    "title": "Tentang Saya",
+    "subtitle": "Mengenal lebih dekat siapa saya dan apa yang saya kerjakan",
+    "whoIAmTitle": "Siapa Saya",
+    "whoIAmText1_1": "Saya seorang ",
+    "whoIAmHighlight": "Full Stack Developer",
+    "whoIAmText1_2": " yang berdedikasi menciptakan aplikasi web berbasis AI yang scalable, menggabungkan desain frontend, logika backend, dan praktik Machine Learning menjadi solusi yang terintegrasi.",
+    "whoIAmText2": "Dengan keahlian dalam teknologi modern, saya mewujudkan ide menjadi kenyataan melalui kode yang bersih dan desain yang intuitif.",
+    "journeyTitle": "Perjalanan Saya",
+    "journeyText": "Berawal dari rasa penasaran tentang bagaimana perangkat lunak dapat mengubah kehidupan sehari-hari. Rasa penasaran tersebut membawa saya ke ITMO, di mana saya tidak hanya mengasah keterampilan pemrograman, tetapi juga aktif mengikuti hackathon dan mengambil peran kepemimpinan dalam komunitas mahasiswa Indonesia.",
+    "whatIDoTitle": "Apa Yang Saya Kerjakan",
+    "services": [
+      "🤖 Data & Machine Learning",
+      "⚛️ Pengembangan Frontend",
+      "🔧 Pengembangan Backend",
+      "📱 Aplikasi Mobile Lintas Platform"
+    ],
+    "missionTitle": "Misi Saya",
+    "missionText": "menciptakan perangkat berbasis AI yang dapat diakses oleh semua orang untuk memberdayakan mahasiswa, usaha kecil, dan masyarakat."
+  }
+}

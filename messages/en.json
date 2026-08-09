@@ -1,0 +1,43 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "techstack": "Tech Stack",
+    "projects": "Portfolio",
+    "contact": "Contact"
+  },
+
+  "Home": {
+    "badge": "Meet Rioo",
+    "words": {
+      "create": "Create,",
+      "develop": "Develop,",
+      "inspire": "Inspire"
+    },
+    "buttons": {
+      "viewWork": "View My Work",
+      "getInTouch": "Get In Touch"
+    }
+  },
+
+  "About": {
+    "title": "About Me",
+    "subtitle": "Get to know more about who I am and what I do",
+    "whoIAmTitle": "Who I Am",
+    "whoIAmText1_1": "I'm a passionate ",
+    "whoIAmHighlight": "Full Stack Developer",
+    "whoIAmText1_2": " who loves creating AI-powered and scalable web applications, combining frontend design, backend logic, and Machine Learning practices into seamless solutions.",
+    "whoIAmText2": "With expertise in modern technologies, I bring ideas to life through clean code and intuitive design.",
+    "journeyTitle": "My Journey",
+    "journeyText": "Started as a curious learner, how software could change everyday life. That curiosity led me to ITMO, where I not only sharpened my coding skills but also joined hackathons and took leadership roles in the Indonesian student community.",
+    "whatIDoTitle": "What I Do",
+    "services": [
+      "🤖 Data & Machine Learning",
+      "⚛️ Frontend Development",
+      "🔧 Backend Development",
+      "📱 Cross-Platform Mobile Apps"
+    ],
+    "missionTitle": "My mission",
+    "missionText": "to create accessible AI-driven tools that empower students, small businesses, and communities."
+  }
+}

@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react"; // Add this import
-import Navbar from "@/app/components/Navbar";
-import HomeSection from "@/app/components/Home";
-import AboutSection from "./components/About";
-import RotatingTechStack from "./components/techstack";
-import PortfolioSection from "./components/portofolio";
-import ContactSection from "./components/Contact";
+import React from "react";
+import Navbar from "./_components/Navbar";
+import HomeSection from "./_components/Home";
+import AboutSection from "./_components/About";
+import RotatingTechStack from "./_components/techstack";
+import PortfolioSection from "./_components/portofolio";
+import ContactSection from "./_components/Contact";
 
 export default function Home(): React.JSX.Element {
   return (
