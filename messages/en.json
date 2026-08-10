@@ -39,5 +39,46 @@
     ],
     "missionTitle": "My mission",
     "missionText": "to create accessible AI-driven tools that empower students, small businesses, and communities."
+  }, 
+  "TechStack": {
+    "titleWord1": "Tech",
+    "titleWord2": "Stack",
+    "subtitle": "Technologies and tools I use to bring ideas to life",
+    "footerText": "Always Learning, Always Growing"
+  }, 
+
+  "Portfolio": {
+    "titleWord1": "My Work",
+    "titleWord2": "Portfolio",
+    "subtitle": "Explore my diverse portfolio across different domains",
+    "githubBtn": "GitHub",
+    "liveDemoBtn": "Live Demo",
+    "moreProjectsQuestion": "Want to see more projects?",
+    "viewMoreBtn": "View More Projects →",
+    "items": {
+      "glowsync": {
+        "title": "Glowsync",
+        "description": "An e-commerce platform providing personalized skincare recommendations based on facial health analysis."
+      },
+      "photobooth": {
+        "title": "Digital Photobooth",
+        "description": "Capture your moments with style and create lasting digital memories."
+      },
+      "efishery": {
+        "title": "Efishery",
+        "description": "Classifying fresh and non-fresh fish images using TensorFlow to maintain quality distribution from producers to consumers."
+      },
+      "lansiapaham": {
+        "title": "Lansia Paham (3rd Place Winner of Hackathon Bit Bash 2026)",
+        "description": "AI platform to assist seniors in filling out forms and scanning for security threats and fraud to create a safe community for the elderly."
+      }
+    }
+  }, 
+  "Contact": {
+    "title": "Lets Work Together",
+    "subtitle": "Have a project in mind? Lets discuss how we can bring your ideas to life.",
+    "button": "Contact Me",
+    "emailSubject": "Hello!",
+    "emailBody": "Hi there, I would like to get in touch with you."
   }
 }

@@ -39,5 +39,48 @@
     ],
     "missionTitle": "Misi Saya",
     "missionText": "menciptakan perangkat berbasis AI yang dapat diakses oleh semua orang untuk memberdayakan mahasiswa, usaha kecil, dan masyarakat."
+  }, 
+
+  "TechStack": {
+    "titleWord1": "Tech",
+    "titleWord2": "Stack",
+    "subtitle": "Teknologi dan alat yang saya gunakan untuk mewujudkan ide",
+    "footerText": "Selalu Belajar, Selalu Berkembang"
+  },
+
+  "Portfolio": {
+    "titleWord1": "Karya Saya",
+    "titleWord2": "Portofolio",
+    "subtitle": "Jelajahi berbagai proyek portofolio saya di berbagai bidang",
+    "githubBtn": "GitHub",
+    "liveDemoBtn": "Demo Langsung",
+    "moreProjectsQuestion": "Ingin melihat lebih banyak proyek?",
+    "viewMoreBtn": "Lihat Proyek Lainnya →",
+    "items": {
+      "glowsync": {
+        "title": "Glowsync",
+        "description": "Platform e-commerce yang menyediakan rekomendasi perawatan kulit terpersonalisasi berdasarkan analisis kesehatan wajah."
+      },
+      "photobooth": {
+        "title": "Digital Photobooth",
+        "description": "Abadikan momen Anda dengan gaya dan ciptakan kenangan digital yang berkesan."
+      },
+      "efishery": {
+        "title": "Efishery",
+        "description": "Mengklasifikasikan gambar ikan segar dan non-segar menggunakan TensorFlow untuk menjaga kualitas distribusi dari produsen ke konsumen."
+      },
+      "lansiapaham": {
+        "title": "Lansia Paham (Juara 3 Hackathon Bit Bash 2026)",
+        "description": "Platform AI untuk membantu lansia mengisi formulir serta memindai ancaman keamanan dan penipuan demi menciptakan komunitas yang aman bagi lansia."
+      }
+    }
+  }, 
+
+  "Contact": {
+    "title": "Mari Bekerja Sama",
+    "subtitle": "Punya ide proyek? Mari diskusikan bagaimana kita bisa mewujudkan ide-ide Anda.",
+    "button": "Hubungi Saya",
+    "emailSubject": "Halo!",
+    "emailBody": "Halo, saya ingin terhubung dengan Anda."
   }
 }

@@ -39,5 +39,46 @@
     ],
     "missionTitle": "Моя миссия",
     "missionText": "создавать доступные инструменты на базе ИИ, которые помогают студентам, малому бизнесу и сообществам."
+  }, 
+  "TechStack": {
+    "titleWord1": "Стек",
+    "titleWord2": "Технологий",
+    "subtitle": "Технологии и инструменты, которые я использую untuk mewujudkan ide",
+    "footerText": "Всегда учусь, всегда развиваюсь"
+  }, 
+
+  "Portfolio": {
+    "titleWord1": "Мои Работы",
+    "titleWord2": "Портфолио",
+    "subtitle": "Исследуйте мои проекты в различных областях",
+    "githubBtn": "GitHub",
+    "liveDemoBtn": "Демо",
+    "moreProjectsQuestion": "Хотите увидеть больше проектов?",
+    "viewMoreBtn": "Посмотреть другие проекты →",
+    "items": {
+      "glowsync": {
+        "title": "Glowsync",
+        "description": "Платформа электронной коммерции, предоставляющая индивидуальные рекомендации по уходу за кожей на основе анализа здоровья лица."
+      },
+      "photobooth": {
+        "title": "Цифровая Фотобудка",
+        "description": "Запечатлейте свои моменты со стилем и создайте незабываемые цифровые воспоминания."
+      },
+      "efishery": {
+        "title": "Efishery",
+        "description": "Классификация изображений свежей и несвежей рыбы с использованием TensorFlow для контроля качества поставок от производителей к потребителям."
+      },
+      "lansiapaham": {
+        "title": "Lansia Paham (3-е место на Хакатоне Bit Bash 2026)",
+        "description": "ИИ-платформа, помогающая пожилым людям заполнять формы и проверяющая угрозы безопасности и мошенничество для создания безопасной среды."
+      }
+    }
+  }, 
+  "Contact": {
+    "title": "Lets Work Together",
+    "subtitle": "Have a project in mind? Lets discuss how we can bring your ideas to life.",
+    "button": "Contact Me",
+    "emailSubject": "Hello!",
+    "emailBody": "Hi there, I would like to get in touch with you."
   }
 }
