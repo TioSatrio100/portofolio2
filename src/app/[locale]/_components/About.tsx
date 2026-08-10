@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Pixelify_Sans } from "next/font/google";
+import { useTranslations } from "next-intl";
 
 const pixelify = Pixelify_Sans({
   subsets: ["latin"],
@@ -10,8 +11,13 @@ const pixelify = Pixelify_Sans({
 });
 
 const AboutSection = () => {
+  const t = useTranslations("About");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  // Ambil array dari JSON terjemahan
+  const services = t.raw("services") as string[];
+
   return (
     <section id="about" className="min-h-screen w-full relative bg-white text-black flex items-center justify-center px-6 py-20 overflow-hidden">
       {/* Yellow Striped Background - Top */}
@@ -46,29 +52,28 @@ const AboutSection = () => {
         <div className="relative w-12 h-12 bg-purple-400 border-4 border-black transform rotate-45"></div>
       </div>
 
-      <div className="absolute top-40 right-20 opacity-60">
-      </div>
-
       <div className="max-w-6xl mx-auto relative z-20">
         {/* Section Title */}
         <div className="text-center mb-16">
           <div className="inline-block relative">
-<motion.h2
-  ref={ref}
-  initial={{ opacity: 0, y: 50 }}
-  animate={isInView ? { opacity: 1, y: 0 } : {}}
-  transition={{ duration: 0.6, ease: "easeOut" }}
-  className="text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4"
->
-  <span className="relative inline-block">
-    <span
-      className={`${pixelify.className} bg-purple-400 px-6 py-3 inline-block transform rotate-1 border-4 border-black`}
-    >
-      About Me
-    </span>
-  </span>
-</motion.h2>
-            <p className="text-xl text-gray-700 mt-6 font-medium">Get to know more about who I am and what I do</p>
+            <motion.h2
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4"
+            >
+              <span className="relative inline-block">
+                <span
+                  className={`${pixelify.className} bg-purple-400 px-6 py-3 inline-block transform rotate-1 border-4 border-black`}
+                >
+                  {t("title")}
+                </span>
+              </span>
+            </motion.h2>
+            <p className="text-xl text-gray-700 mt-6 font-medium">
+              {t("subtitle")}
+            </p>
           </div>
         </div>
 
@@ -76,20 +81,25 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-6">
-            <motion.div   ref={ref}
+            <motion.div
+              ref={ref}
               initial={{ opacity: 0, x: -100 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut" }} className="bg-yellow-400 border-4 border-black p-8 transform -rotate-1 shadow-2xl">
-              <h3 className="text-3xl font-black uppercase mb-4">Who I Am</h3>
-              <div  className="space-y-4 text-lg leading-relaxed">
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="bg-yellow-400 border-4 border-black p-8 transform -rotate-1 shadow-2xl"
+            >
+              <h3 className="text-3xl font-black uppercase mb-4">
+                {t("whoIAmTitle")}
+              </h3>
+              <div className="space-y-4 text-lg leading-relaxed">
                 <p className="font-medium">
-                  Im a passionate <span className="bg-white px-2 py-1 font-bold">Full Stack Developer</span> who loves creating 
-                  AI-powered and scalable web applications, combining frontend design, backend logic, and Machine Learning practices into seamless solutions.
+                  {t("whoIAmText1_1")}
+                  <span className="bg-white px-2 py-1 font-bold">
+                    {t("whoIAmHighlight")}
+                  </span>
+                  {t("whoIAmText1_2")}
                 </p>
-                <p>
-                  With expertise in modern technologies, I bring ideas to life through 
-                  clean code and intuitive design.
-                </p>
+                <p>{t("whoIAmText2")}</p>
               </div>
             </motion.div>
 
@@ -98,33 +108,35 @@ const AboutSection = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="bg-white border-4 border-black p-8 shadow-xl">
+              className="bg-white border-4 border-black p-8 shadow-xl"
+            >
               <h3 className="text-2xl font-black uppercase mb-4">
-                <span className="bg-purple-400 px-3 py-1">My Journey</span>
+                <span className="bg-purple-400 px-3 py-1">
+                  {t("journeyTitle")}
+                </span>
               </h3>
-              <p className="text-lg leading-relaxed">
-                Started as a curious learner, how software could change everyday life. That curiosity led me to ITMO, where I not only sharpened my coding skills but also joined hackathons and took leadership roles in the Indonesian student community.
-              </p>
+              <p className="text-lg leading-relaxed">{t("journeyText")}</p>
             </motion.div>
           </div>
 
           {/* Right Content */}
-          <motion.div 
-          ref={ref}
-          initial={{ opacity: 0, x: 100 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="space-y-6">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: 100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="space-y-6"
+          >
             <div className="bg-purple-400 border-4 border-black p-8 transform rotate-1 shadow-2xl">
-              <h3 className="text-3xl font-black uppercase mb-4">What I Do</h3>
+              <h3 className="text-3xl font-black uppercase mb-4">
+                {t("whatIDoTitle")}
+              </h3>
               <ul className="space-y-3 text-lg">
-                {[
-                  "🤖 Data & Machine Learning",
-                  "⚛️ Frontend Development", 
-                  "🔧 Backend Development",
-                  "📱 Cross-Platform Mobile Apps"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 bg-white border-2 border-black px-4 py-3 font-bold transform hover:translate-x-2 transition-transform">
+                {services.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-center gap-3 bg-white border-2 border-black px-4 py-3 font-bold transform hover:translate-x-2 transition-transform"
+                  >
                     {item}
                   </li>
                 ))}
@@ -132,8 +144,12 @@ const AboutSection = () => {
             </div>
 
             <div className="bg-white border-4 border-black p-6 text-center">
-              <div className="text-5xl font-black text-yellow-500 mb-2">My mission</div>
-              <div className="text-md font-bold uppercase">to create accessible AI-driven tools that empower students, small businesses, and communities.</div>
+              <div className="text-5xl font-black text-yellow-500 mb-2">
+                {t("missionTitle")}
+              </div>
+              <div className="text-md font-bold uppercase">
+                {t("missionText")}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -143,7 +159,10 @@ const AboutSection = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
         <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-yellow-400 border-2 border-black opacity-80 animate-ping"></div>
         <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-purple-400 border-2 border-black opacity-60 animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-yellow-400 border-2 border-black opacity-70 animate-ping" style={{ animationDelay: "1s" }}></div>
+        <div
+          className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-yellow-400 border-2 border-black opacity-70 animate-ping"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
 
       {/* Pixel Art Bottom Right */}
